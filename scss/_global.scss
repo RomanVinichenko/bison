@@ -34,3 +34,40 @@ body {
     background-color: #168de3;
   }
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #101828;
+}
+
+h3 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -0.02em;
+  color: #101828;
+
+  span {
+    color: #0ba5ec;
+  }
+}
+
+.footer {
+  background: #f9fafb;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 128px;
+  }
+
+  p {
+    color: #98a2b3;
+  }
+}
