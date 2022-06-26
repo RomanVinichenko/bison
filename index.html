@@ -4,35 +4,35 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Document</title>
-  <link rel="icon" type="image/" href="" sizes="">
+  <title>YUmsel</title>
+  <link rel="icon" type="image/svg" href="images/fav.svg" sizes="48x48">
   <link rel="stylesheet" href="css/style.min.css"/>
 </head>
 
-<body>
+<body id="home">
 <header class="header">
   <div class="container">
     <nav class="menu">
-      <a class="logo" href="#">
+      <a class="logo" href="#home">
         <img src="images/logo.svg" alt="Logo">
       </a>
       <ul>
         <li>
-          <a href="#">Main</a>
+          <a href="#home">Main</a>
         </li>
         <li>
-          <a href="#">Advantages</a>
+          <a href="#system">Advantages</a>
         </li>
         <li>
-          <a href="#">About product</a>
+          <a href="#about">About product</a>
         </li>
         <li>
-          <a href="#">Support</a>
+          <a href="#assistance">Support</a>
         </li>
       </ul>
-      <button class="button">
+      <a class="button" href="#contact">
         Contact us
-      </button>
+      </a>
     </nav>
   </div>
 </header>
@@ -47,14 +47,14 @@
           <p>
             The modern system for automated knowledge and qualifications assessment.
           </p>
-          <button class="button">
+          <a class="button" href="#solution">
             Learn more
-          </button>
+          </a>
         </div>
       </div>
     </div>
   </section>
-  <section class="solution">
+  <section class="solution" id="solution">
     <div class="container">
       <h3><span>Y</span>ümsel - modern and robust solution</h3>
       <p class="solution__text">Open a full-featured account in with virtual cards in less than 5 minutes.</p>
@@ -98,7 +98,7 @@
       </ul>
     </div>
   </section>
-  <section class="system">
+  <section class="system" id="system">
     <div class="container">
       <div class="system__wrapper">
         <div class="system__info">
@@ -131,7 +131,7 @@
       </div>
     </div>
   </section>
-  <section class="about">
+  <section class="about" id="about">
     <div class="container">
       <div class="about__wrapper">
         <img src="images/about.png" alt="About">
@@ -145,9 +145,9 @@
             Testing with this system eliminates any possibility of external interference. All response options alternate
             randomly since the start of the application.
           </p>
-          <button class="button">
+          <a class="button" href="#contact">
             Get in touch
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -190,7 +190,7 @@
       </ul>
     </div>
   </section>
-  <section class="assistance">
+  <section class="assistance" id="assistance">
     <div class="container">
       <div class="assistance__wrapper">
         <div class="assistance__info">
@@ -205,22 +205,23 @@
       </div>
     </div>
   </section>
-  <section class="contact">
+  <section class="contact" id="contact">
     <div class="container">
       <div class="contact__wrapper">
-        <form class="form">
+        <form class="form" id="contact-form">
           <h3>Get in touch</h3>
+          <input type="hidden" name="contact_number">
           <label>
             <span>Name*</span>
-            <input type="text" placeholder="Enter your name" required>
+            <input type="text" placeholder="Enter your name" name="name" required>
           </label>
           <label>
             <span>Email*</span>
-            <input type="email" placeholder="Enter your email" required>
+            <input type="email" placeholder="Enter your email" name="email" required>
           </label>
           <label>
             <span>Your message</span>
-            <textarea placeholder="Enter a message..."></textarea>
+            <textarea placeholder="Enter a message..." name="message" required></textarea>
           </label>
           <label>
             <input class="button button--submit" type="submit" value="Send a message">
@@ -241,14 +242,19 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__wrapper">
-      <a class="logo" href="#">
+      <a class="logo" href="#home">
         <img src="images/logo.svg" alt="Logo">
       </a>
       <p>ⓒ 2017-2022 Bison Tech Solutions, Inc. All rights reserved</p>
     </div>
   </div>
 </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 <script src="js/index.min.js"></script>
+
 </body>
 
 </html>

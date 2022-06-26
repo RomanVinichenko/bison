@@ -1,5 +1,5 @@
 .hero {
-  margin-bottom: 160px;
+  margin-bottom: 50px;
 
   .button {
     padding: 0 28px;
@@ -120,22 +120,20 @@
 .system {
   position: relative;
   margin-bottom: 160px;
-  overflow: hidden;
   background-color: #fbfdff;
 
   &::before {
     content: "";
     position: absolute;
-    left: -10%;
+    left: 0;
     right: 0;
-    top: -50%;
-    z-index: -1;
-    opacity: 0.1;
+    top: -30%;
+    opacity: 0.05;
     width: 100%;
     height: 100%;
     background-image: url("../images/figure.svg");
     background-repeat: no-repeat;
-    filter: blur(323px);
+    filter: blur(333px);
   }
 
   &__wrapper {
@@ -144,12 +142,15 @@
   }
 
   &__info {
+    z-index: 5;
     width: 100%;
     min-width: 657px;
     max-width: 657px;
   }
 
   img {
+    z-index: 5;
+    margin-left: -5%;
     object-fit: cover;
   }
 
@@ -221,6 +222,10 @@
     justify-content: space-between;
   }
 
+  &__info {
+    max-width: 576px;
+  }
+
   h3 {
     margin-bottom: 40px;
     letter-spacing: 0;
@@ -232,7 +237,7 @@
     line-height: 28px;
 
     &:not(:last-child) {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
   }
 
@@ -253,7 +258,10 @@
   }
 
   p {
-    margin-bottom: 64px;
+    margin: 0 auto 64px;
+    max-width: 768px;
+    font-size: 20px;
+    line-height: 30px;
     text-align: center;
   }
 
@@ -269,7 +277,8 @@
 }
 
 .assistance {
-  padding: 96px 0;
+  margin-bottom: 160px;
+  padding: 5px 0 0;
 
   &__wrapper {
     display: flex;
@@ -293,7 +302,7 @@
     color: #303135;
 
     &:not(:last-child) {
-      margin-bottom: 25px;
+      margin-bottom: 22px;
     }
   }
 }
