@@ -12,19 +12,140 @@
     align-items: center;
     height: 80px;
 
-    ul {
+    .button {
+      @include m($lg) {
+        display: none;
+      }
+    }
+
+    .logo {
+      z-index: 20;
+
+      img {
+        @include m($lg) {
+          max-width: 80%;
+        }
+      }
+    }
+
+    &__list {
       display: flex;
       margin: 0 auto 0 40px;
 
       li {
         + li {
           margin-left: 32px;
+
+          @include m($lg) {
+            margin-top: 15px;
+            margin-left: 0;
+          }
         }
 
         a {
           font-weight: 500;
+
+          @include m($lg) {
+            font-size: 28px;
+            line-height: 36px;
+            color: #101828;
+          }
         }
       }
+
+      @include m($lg) {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        height: 100vh;
+        background-color: #fff;
+        transform: translateX(-200%);
+        transition: all 0.4s;
+      }
+    }
+
+    &__list--active {
+      transform: none;
+    }
+
+    &__burger {
+      position: relative;
+      display: none;
+      margin: 0;
+      padding: 0;
+      width: 35px;
+      height: 35px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        width: 26px;
+        height: 3px;
+        border-radius: 20px;
+        background-color: #101828;
+        transform: translateX(-50%);
+        transition: all 0.2s;
+      }
+
+      &::before {
+        bottom: 8px;
+      }
+
+      &::after {
+        top: 8px;
+      }
+
+      span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        display: block;
+        width: 26px;
+        height: 3px;
+        border-radius: 20px;
+        background-color: #101828;
+        transform: translate(-50%, -50%);
+        transition: all 0.2s;
+      }
+
+      @include m($lg) {
+        display: block;
+      }
+    }
+
+    &__burger--active {
+      &::before {
+        left: 40%;
+        bottom: 25px;
+        transform: rotate(-45deg) translateX(-50%);
+      }
+
+      &::after {
+        left: 40%;
+        top: 25px;
+        transform: rotate(45deg) translateX(-50%);
+      }
+
+      span {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+
+    @include m($lg) {
+      justify-content: space-between;
+      height: 55px;
     }
   }
 }
