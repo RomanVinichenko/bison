@@ -319,6 +319,7 @@
 }
 
 .system {
+  overflow-x: hidden;
   position: relative;
   margin-bottom: 160px;
   background-color: #fbfdff;
@@ -767,6 +768,7 @@
 .contact {
   position: relative;
   padding: 228px 0;
+  overflow-x: hidden;
 
   &::after {
     content: "";
