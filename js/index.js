@@ -27,8 +27,11 @@ window.onload = function () {
         emailjs.sendForm('service_8b26w4b', 'template_edsho5c', this)
             .then(function () {
                 console.log('SUCCESS!');
+                document.getElementById("contact-form").reset();
+                alert('SUCCESS!')
             }, function (error) {
                 console.log('FAILED...', error);
+                alert('FAILED')
             });
     });
 }
