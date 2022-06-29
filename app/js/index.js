@@ -1,9 +1,9 @@
-if ($(window).width() < 1200) {
+if ($(window).width() < 999) {
     $(document).on('click', 'a[href^="#"]', function (event) {
         event.preventDefault();
 
         $('html, body').animate({
-            scrollTop: $($.attr(this, 'href')).offset().top - 20
+            scrollTop: $($.attr(this, 'href')).offset().top - 55
         }, 500);
     });
 } else {
@@ -23,9 +23,7 @@ if ($(window).width() < 1200) {
 window.onload = function () {
     document.getElementById('contact-form').addEventListener('submit', function (event) {
         event.preventDefault();
-        // generate a five digit number for the contact_number variable
         this.contact_number.value = Math.random() * 100000 | 0;
-        // these IDs from the previous steps
         emailjs.sendForm('service_8b26w4b', 'template_edsho5c', this)
             .then(function () {
                 console.log('SUCCESS!');
@@ -34,3 +32,19 @@ window.onload = function () {
             });
     });
 }
+
+const btn = document.querySelector(".menu__burger")
+const menu = document.querySelector(    ".menu__list")
+
+const menuLinks = document.querySelectorAll(".menu__link")
+menuLinks.forEach(function(menuLink){
+    menuLink.addEventListener('click', function () {
+        menu.classList.remove('menu__list--active')
+        btn.classList.remove('menu__burger--active')
+    })
+})
+
+btn.addEventListener('click', function () {
+    menu.classList.toggle('menu__list--active')
+    btn.classList.toggle('menu__burger--active')
+})

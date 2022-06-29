@@ -1,12 +1,41 @@
 .hero {
   margin-bottom: 50px;
 
+  &__pic {
+    display: none;
+
+    img {
+      @include m($md) {
+        margin: 0 auto;
+        max-width: 50%;
+      }
+
+      @include m($sm) {
+        margin: 0 auto;
+        max-width: 100%;
+      }
+    }
+
+    @include m($lg) {
+      display: block;
+    }
+
+    @include m(800) {
+      max-width: 95%;
+    }
+  }
+
   .button {
     padding: 0 28px;
     height: 60px;
     font-weight: 500;
     font-size: 18px;
     line-height: 28px;
+
+    @include m($xl) {
+      height: 45px;
+      font-size: 16px;
+    }
   }
 
   h1 {
@@ -27,6 +56,37 @@
       background-image: url("../images/arrow.svg");
       background-size: contain;
       background-repeat: no-repeat;
+
+      @include m($xxl) {
+        left: -32%;
+        transform: scale(0.8);
+      }
+
+      @include m($xl) {
+        left: -28%;
+        transform: scale(0.6);
+      }
+
+      @include m($lg) {
+        display: none;
+      }
+    }
+
+    @include m($xxl) {
+      margin-bottom: 20px;
+      font-size: 48px;
+      line-height: 66px;
+    }
+
+    @include m($xl) {
+      margin-bottom: 15px;
+      font-size: 40px;
+      line-height: 52px;
+    }
+
+    @include m($md) {
+      font-size: 36px;
+      line-height: 44px;
     }
   }
 
@@ -35,6 +95,12 @@
     max-width: 480px;
     font-size: 20px;
     line-height: 30px;
+
+    @include m($xl) {
+      margin-bottom: 30px;
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 
   &__wrapper {
@@ -56,6 +122,31 @@
       background-image: url("../images/smart.png");
       background-size: contain;
       background-repeat: no-repeat;
+
+      @include m($xl) {
+        left: 0;
+        max-width: 45vw;
+      }
+
+      @include m($lg) {
+        display: none;
+      }
+    }
+
+    @include m($xl) {
+      min-height: 604px;
+      max-height: 604px;
+    }
+
+    @include m($md) {
+      flex-direction: column-reverse;
+      padding-top: 140px;
+      min-height: fit-content;
+      max-height: fit-content;
+    }
+
+    @include m($sm) {
+      padding-top: 110px;
     }
   }
 
@@ -63,6 +154,29 @@
     z-index: 10;
     width: 100%;
     max-width: 576px;
+
+    @include m($xxl) {
+      max-width: 520px;
+    }
+
+    @include m($xl) {
+      max-width: 490px;
+    }
+
+    @include m($lg) {
+      max-width: 430px;
+    }
+
+    @include m(800) {
+      min-width: 364px;
+      max-width: 520px;
+    }
+
+    @include m($md) {
+      margin-bottom: 30px;
+      min-width: 100%;
+      max-width: 100%;
+    }
   }
 
   &__blur {
@@ -73,10 +187,21 @@
     border-radius: 50%;
     background: #168de3;
     filter: blur(333px);
+
+    @include m($lg) {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  @include m($xl) {
+    margin-bottom: 0;
   }
 }
 
 .solution {
+  z-index: 5;
   margin-bottom: 160px;
   padding: 96px 0;
 
@@ -89,6 +214,24 @@
     font-size: 20px;
     line-height: 30px;
     text-align: center;
+
+    @include m($xl) {
+      margin-bottom: 50px;
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+    @include m($lg) {
+      margin-bottom: 40px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include m($sm) {
+      margin-bottom: 30px;
+      font-size: 14px;
+      line-height: 22px;
+    }
   }
 
   ul {
@@ -100,6 +243,10 @@
       width: 100%;
       max-width: 384px;
       text-align: center;
+
+      @include m($sm) {
+        max-width: 100%;
+      }
     }
 
     h5 {
@@ -107,13 +254,66 @@
       font-weight: 500;
       font-size: 20px;
       line-height: 30px;
+
+      @include m($xl) {
+        font-size: 18px;
+        line-height: 26px;
+      }
+    }
+
+    p {
+      @include m($xl) {
+        font-size: 14px;
+        line-height: 22px;
+      }
     }
 
     img {
       margin: 0 auto 20px;
       width: 48px;
       height: 48px;
+
+      @include m($xl) {
+        margin: 0 auto 15px;
+      }
+
+      @include m($lg) {
+        transform: scale(0.9);
+      }
     }
+
+    @include m($xl) {
+      grid-gap: 50px 30px;
+    }
+
+    @include m($lg) {
+      grid-gap: 40px 30px;
+    }
+
+    @include m($md) {
+      grid-gap: 30px 25px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include m($sm) {
+      grid-gap: 25px 0;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @include m($xl) {
+    margin-bottom: 120px;
+    padding: 80px 0;
+  }
+
+  @include m($lg) {
+    margin-bottom: 80px;
+    padding: 60px 0;
+  }
+
+  @include m($md) {
+    margin-bottom: 70px;
+    padding: 50px 0;
   }
 }
 
@@ -134,11 +334,20 @@
     background-image: url("../images/figure.svg");
     background-repeat: no-repeat;
     filter: blur(333px);
+
+    @include m($md) {
+      display: none;
+    }
   }
 
   &__wrapper {
     display: flex;
     align-items: center;
+
+    @include m($md) {
+      flex-direction: column;
+      padding: 20px 0;
+    }
   }
 
   &__info {
@@ -146,12 +355,33 @@
     width: 100%;
     min-width: 657px;
     max-width: 657px;
+
+    @include m($xl) {
+      min-width: 607px;
+      max-width: 607px;
+    }
+
+    @include m($lg) {
+      min-width: 500px;
+      max-width: 500px;
+    }
+
+    @include m($md) {
+      margin-bottom: 30px;
+      min-width: 100%;
+      max-width: 100%;
+    }
   }
 
   img {
     z-index: 5;
     margin-left: -5%;
     object-fit: cover;
+
+    @include m($xl) {
+      margin-left: 0;
+      max-width: 75%;
+    }
   }
 
   p {
@@ -160,6 +390,28 @@
     font-size: 20px;
     line-height: 30px;
     color: #303135;
+
+    @include m($xl) {
+      margin-bottom: 50px;
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+    @include m($lg) {
+      margin-bottom: 40px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include m($md) {
+      max-width: 100%;
+    }
+
+    @include m($sm) {
+      margin-bottom: 30px;
+      font-size: 14px;
+      line-height: 22px;
+    }
   }
 
   ul {
@@ -183,6 +435,10 @@
 
       &:not(:last-child) {
         margin-bottom: 32px;
+
+        @include m($xl) {
+          margin-bottom: 25px;
+        }
       }
 
       &:last-child {
@@ -208,7 +464,36 @@
           opacity: 0.2;
         }
       }
+
+      @include m($xl) {
+        padding-left: 20px;
+      }
+
+      @include m($lg) {
+        font-size: 14px;
+        line-height: 22px;
+      }
     }
+
+    @include m($xl) {
+      max-width: 560px;
+    }
+
+    @include m($md) {
+      max-width: 100%;
+    }
+  }
+
+  @include m($xl) {
+    margin-bottom: 120px;
+  }
+
+  @include m($lg) {
+    margin-bottom: 80px;
+  }
+
+  @include m($md) {
+    margin-bottom: 70px;
   }
 }
 
@@ -220,16 +505,41 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include m($md) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  img {
+    width: 100%;
+
+    @include m($xl) {
+      max-width: 550px;
+    }
+
+    @include m($lg) {
+      max-width: 400px;
+    }
   }
 
   &__info {
     max-width: 576px;
+
+    @include m($md) {
+      margin-bottom: 30px;
+      max-width: 100%;
+    }
   }
 
   h3 {
     margin-bottom: 40px;
     letter-spacing: 0;
     color: #303135;
+
+    @include m($xl) {
+      margin-bottom: 15px;
+    }
   }
 
   p {
@@ -238,6 +548,20 @@
 
     &:not(:last-child) {
       margin-bottom: 18px;
+
+      @include m($xl) {
+        margin-bottom: 15px;
+      }
+    }
+
+    @include m($xl) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include m($lg) {
+      font-size: 14px;
+      line-height: 22px;
     }
   }
 
@@ -245,6 +569,29 @@
     margin-top: 40px;
     padding: 0 20px;
     height: 48px;
+
+    @include m($xl) {
+      margin-top: 25px;
+    }
+
+    @include m($xl) {
+      height: 45px;
+      font-size: 16px;
+    }
+  }
+
+  @include m($xl) {
+    margin-bottom: 80px;
+    padding: 80px 0;
+  }
+
+  @include m($lg) {
+    margin-bottom: 70px;
+    padding: 60px 0;
+  }
+
+  @include m($md) {
+    padding: 50px 0;
   }
 }
 
@@ -263,6 +610,24 @@
     font-size: 20px;
     line-height: 30px;
     text-align: center;
+
+    @include m($xl) {
+      margin: 0 auto 50px;
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+    @include m($lg) {
+      margin: 0 auto 40px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include m($sm) {
+      margin: 0 auto 30px;
+      font-size: 14px;
+      line-height: 22px;
+    }
   }
 
   ul {
@@ -272,7 +637,47 @@
 
     img {
       margin: 0 auto;
+
+      @include m($xl) {
+        max-width: 100px;
+      }
+
+      @include m($lg) {
+        max-width: 80px;
+      }
+
+      @include m($sm) {
+        max-width: 95px;
+      }
     }
+
+    @include m($xl) {
+      grid-gap: 40px;
+    }
+
+    @include m($lg) {
+      grid-gap: 20px;
+    }
+
+    @include m($sm) {
+      grid-gap: 20px 0;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @include m($xl) {
+    margin-bottom: 120px;
+    padding: 80px 0;
+  }
+
+  @include m($lg) {
+    margin-bottom: 100px;
+    padding: 60px 0;
+  }
+
+  @include m($md) {
+    margin-bottom: 80px;
+    padding: 50px 0;
   }
 }
 
@@ -284,16 +689,41 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include m($md) {
+      flex-direction: column;
+    }
+  }
+
+  img {
+    @include m(1450) {
+      max-width: 45%;
+    }
+
+    @include m($sm) {
+      max-width: 90%;
+    }
   }
 
   &__info {
+    margin-right: 40px;
     max-width: 397px;
+
+    @include m($md) {
+      margin-right: 0;
+      margin-bottom: 30px;
+      max-width: 100%;
+    }
   }
 
   h3 {
     margin-bottom: 52px;
     letter-spacing: 0;
     color: #303135;
+
+    @include m($xl) {
+      margin-bottom: 15px;
+    }
   }
 
   p {
@@ -303,7 +733,33 @@
 
     &:not(:last-child) {
       margin-bottom: 22px;
+
+      @include m($xl) {
+        margin-bottom: 15px;
+      }
     }
+
+    @include m($xl) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include m($lg) {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  @include m($xl) {
+    margin-bottom: 120px;
+  }
+
+  @include m($lg) {
+    margin-bottom: 100px;
+  }
+
+  @include m($md) {
+    margin-bottom: 80px;
   }
 }
 
@@ -328,6 +784,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include m($md) {
+      flex-direction: column;
+    }
   }
 
   &__info {
@@ -339,8 +799,19 @@
       position: absolute;
       left: -50%;
       bottom: -144px;
-      width: 335px;
-      height: 102px;
+
+      @include m(1400) {
+        left: -40%;
+        transform: scale(0.8);
+      }
+
+      @include m($xl) {
+        left: -30%;
+      }
+
+      @include m($lg) {
+        display: none;
+      }
     }
 
     h2 {
@@ -359,6 +830,26 @@
         top: -112px;
         width: 80px;
         height: 80px;
+
+        @include m($xl) {
+          transform: scale(0.8);
+        }
+
+        @include m($md) {
+          display: none;
+        }
+      }
+
+      @include m(1350) {
+        margin-bottom: 20px;
+        font-size: 40px;
+        line-height: 52px;
+      }
+
+      @include m($xl) {
+        margin-bottom: 15px;
+        font-size: 30px;
+        line-height: 42px;
       }
     }
 
@@ -367,6 +858,26 @@
       font-size: 18px;
       line-height: 28px;
       color: #c0c4cc;
+
+      @include m($xl) {
+        margin-bottom: 25px;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      @include m($lg) {
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+
+    @include m(1350) {
+      max-width: 45%;
+    }
+
+    @include m($md) {
+      max-width: 100%;
     }
   }
 
@@ -383,6 +894,11 @@
       font-size: 16px;
       line-height: 24px;
       color: #303135;
+
+      @include m($lg) {
+        font-size: 14px;
+        line-height: 22px;
+      }
     }
   }
 
@@ -392,6 +908,10 @@
 
     h3 {
       margin-bottom: 32px;
+
+      @include m($xl) {
+        margin-bottom: 15px;
+      }
     }
 
     span {
@@ -420,6 +940,13 @@
       &::placeholder {
         color: #667085;
       }
+
+      @include m($md) {
+        margin: 0 0 15px;
+        padding: 8px;
+        font-size: 14px;
+        line-height: 20px;
+      }
     }
 
     textarea {
@@ -437,6 +964,27 @@
       &:hover {
         background-color: #168de3;
       }
+
+      @include m($md) {
+        height: 40px;
+      }
     }
+
+    @include m($lg) {
+      max-width: 315px;
+    }
+
+    @include m($md) {
+      margin-bottom: 30px;
+      max-width: 100%;
+    }
+  }
+
+  @include m($xl) {
+    padding: 100px 0;
+  }
+
+  @include m($lg) {
+    padding: 50px 0 80px;
   }
 }

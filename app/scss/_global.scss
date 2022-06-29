@@ -56,6 +56,17 @@ h3 {
   span {
     color: #0ba5ec;
   }
+
+  @include m($xl) {
+    margin-bottom: 15px;
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  @include m($lg) {
+    font-size: 26px;
+    line-height: 34px;
+  }
 }
 
 .footer {
@@ -66,9 +77,32 @@ h3 {
     align-items: center;
     justify-content: space-between;
     height: 128px;
+
+    @include m($xl) {
+      height: 105px;
+    }
+
+    @include m($md) {
+      flex-direction: column;
+      justify-content: space-around;
+    }
   }
 
   p {
     color: #98a2b3;
+
+    @include m($xl) {
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+
+  .logo {
+    img {
+      @include m($lg) {
+        max-width: 80%;
+      }
+    }
   }
 }
