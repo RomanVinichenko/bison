@@ -111,12 +111,12 @@ h3 {
   transition: all 0.2s;
 
   &:hover {
-    color: #0ba5ec;
+    color: #0ba5ec !important;
   }
 }
 
 .nav__link--active {
-  color: #0ba5ec;
+  color: #0ba5ec !important;
 }
 
 .support {
