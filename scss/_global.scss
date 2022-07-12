@@ -106,3 +106,31 @@ h3 {
     }
   }
 }
+
+.nav__link {
+  transition: all 0.2s;
+
+  &:hover {
+    color: #0ba5ec;
+  }
+}
+
+.nav__link--active {
+  color: #0ba5ec;
+}
+
+.support {
+  padding-top: 80px;
+
+  @include m($xl) {
+    padding-top: 60px;
+  }
+
+  @include m($lg) {
+    padding-top: 50px;
+  }
+
+  @include m($md) {
+    padding-top: 40px;
+  }
+}

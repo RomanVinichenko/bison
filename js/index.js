@@ -1,21 +1,3 @@
-if ($(window).width() < 999) {
-    $(document).on('click', 'a[href^="#"]', function (event) {
-        event.preventDefault();
-
-        $('html, body').animate({
-            scrollTop: $($.attr(this, 'href')).offset().top - 55
-        }, 500);
-    });
-} else {
-    $(document).on('click', 'a[href^="#"]', function (event) {
-        event.preventDefault();
-
-        $('html, body').animate({
-            scrollTop: $($.attr(this, 'href')).offset().top - 80
-        }, 500);
-    });
-}
-
 (function () {
     emailjs.init('Peje_gKxXqc-rxd7b');
 })();
@@ -37,10 +19,10 @@ window.onload = function () {
 }
 
 const btn = document.querySelector(".menu__burger")
-const menu = document.querySelector(    ".menu__list")
+const menu = document.querySelector(".menu__list")
 
 const menuLinks = document.querySelectorAll(".menu__link")
-menuLinks.forEach(function(menuLink){
+menuLinks.forEach(function (menuLink) {
     menuLink.addEventListener('click', function () {
         menu.classList.remove('menu__list--active')
         btn.classList.remove('menu__burger--active')
@@ -51,3 +33,46 @@ btn.addEventListener('click', function () {
     menu.classList.toggle('menu__list--active')
     btn.classList.toggle('menu__burger--active')
 })
+
+var sections = $('section')
+const nav = $('nav')
+const nav_height = nav.outerHeight();
+
+$(window).on('scroll', function () {
+    var cur_pos = $(this).scrollTop();
+
+    sections.each(function () {
+        var top = $(this).offset().top - nav_height,
+            bottom = top + $(this).outerHeight();
+
+        if (cur_pos >= top && cur_pos <= bottom) {
+            nav.find('a').removeClass('nav__link--active');
+            sections.removeClass('HERE');
+
+            $(this).addClass('HERE');
+            nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('nav__link--active');
+        }
+    });
+});
+
+nav.find('a').on('click', function () {
+    var $el = $(this)
+        , id = $el.attr('href');
+
+    $('html, body').animate({
+        scrollTop: $(id).offset().top - nav_height + 5
+    }, 500);
+
+    return false;
+});
+
+$('.logo--footer, .hero__button, .about-section__button').on('click', function () {
+    var $el = $(this)
+        , id = $el.attr('href');
+
+    $('html, body').animate({
+        scrollTop: $(id).offset().top - nav_height
+    }, 500);
+
+    return false;
+});

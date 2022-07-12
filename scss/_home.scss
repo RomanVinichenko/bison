@@ -64,7 +64,7 @@
       }
 
       @include m($xl) {
-        left: -28%;
+        left: -29%;
         transform: scale(0.6);
       }
 
@@ -113,20 +113,26 @@
     max-height: 754px;
 
     &::after {
-      content: "";
+      content: url("../images/smart.png");
       position: absolute;
-      left: -30px;
-      top: 60px;
-      width: 100%;
-      height: 100%;
-      max-width: 55vw;
-      background-image: url("../images/smart.png");
-      background-size: contain;
-      background-repeat: no-repeat;
+      left: -80px;
+      top: 80px;
+      transform: scale(0.95);
+
+      @include m(1400) {
+        left: -50px;
+        transform: scale(0.9);
+      }
 
       @include m($xl) {
-        left: 0;
-        max-width: 45vw;
+        left: -80px;
+        top: 0;
+        transform: scale(0.75);
+      }
+
+      @include m(1099) {
+        left: -120px;
+        transform: scale(0.7);
       }
 
       @include m($lg) {
@@ -600,7 +606,7 @@
 }
 
 .tools {
-  margin-bottom: 160px;
+  margin-bottom: 80px;
   padding: 96px 0;
   background-color: #fbfdff;
 
@@ -670,24 +676,23 @@
   }
 
   @include m($xl) {
-    margin-bottom: 120px;
+    margin-bottom: 60px;
     padding: 80px 0;
   }
 
   @include m($lg) {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     padding: 60px 0;
   }
 
   @include m($md) {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     padding: 50px 0;
   }
 }
 
 .assistance {
   margin-bottom: 160px;
-  padding: 5px 0 0;
 
   &__wrapper {
     display: flex;
@@ -755,11 +760,11 @@
   }
 
   @include m($xl) {
-    margin-bottom: 120px;
+    margin-bottom: 100px;
   }
 
   @include m($lg) {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
   }
 
   @include m($md) {
@@ -769,7 +774,7 @@
 
 .contact {
   position: relative;
-  padding: 200px 0;
+  padding: 150px 0;
   overflow-x: hidden;
 
   &::after {
