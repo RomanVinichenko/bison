@@ -21,7 +21,7 @@ window.onload = function () {
 const btn = document.querySelector(".menu__burger")
 const menu = document.querySelector(".menu__list")
 
-const menuLinks = document.querySelectorAll(".menu__link")
+const menuLinks = document.querySelectorAll(".nav__link")
 menuLinks.forEach(function (menuLink) {
     menuLink.addEventListener('click', function () {
         menu.classList.remove('menu__list--active')
@@ -60,6 +60,7 @@ nav.find('a').on('click', function () {
         , id = $el.attr('href');
 
     $('html, body').animate({
+
         scrollTop: $(id).offset().top - nav_height + 5
     }, 500);
 
